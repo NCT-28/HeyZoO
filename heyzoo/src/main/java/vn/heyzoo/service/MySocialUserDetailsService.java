@@ -16,14 +16,13 @@ public class MySocialUserDetailsService implements SocialUserDetailsService {
 	@Autowired
 	private UserDetailsService userDetailService;
 
-	// Tải thông tin người dùng đăng nhập bởi mạng xã hội.
-	// (Phương thức này được sử dụng bởi Spring Social Security API)
 	@Override
 	public SocialUserDetails loadUserByUserId(String userId) throws UsernameNotFoundException {
-		// Dựa trên UserDetailService. (Xem MyUserDetailService).
 		UserDetails userDetails = userDetailService.loadUserByUsername(userId);
 
 		return (MySocialUserDetails) userDetails;
 	}
+
+	
 
 }

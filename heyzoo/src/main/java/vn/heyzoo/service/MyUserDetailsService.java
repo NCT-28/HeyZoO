@@ -27,7 +27,6 @@ public class MyUserDetailsService implements UserDetailsService {
 
 	}
 
-	// (Phương thức này được sử dụng bởi Spring Security API).
 	@Override
 	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
 		MyUserAccount myUserAccount = myUserAccountDAO.findByUserName(username);
@@ -41,5 +40,6 @@ public class MyUserDetailsService implements UserDetailsService {
 
 		return principal;
 	}
+
 
 }
