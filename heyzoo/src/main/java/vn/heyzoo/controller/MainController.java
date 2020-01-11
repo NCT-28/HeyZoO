@@ -27,7 +27,6 @@ import vn.heyzoo.util.SecurityUtil;
 import vn.heyzoo.validator.MyUserAccountValidator;
 
 @Controller
-//Cần thiết để sử dụng RedirectAttributes
 @EnableWebMvc
 public class MainController {
 	@Autowired

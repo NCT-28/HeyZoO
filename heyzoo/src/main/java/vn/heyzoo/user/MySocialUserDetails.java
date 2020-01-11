@@ -1,4 +1,4 @@
-	package vn.heyzoo.user;
+package vn.heyzoo.user;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -17,7 +17,6 @@ import vn.heyzoo.model.MyUserAccount;
  */
 public class MySocialUserDetails implements SocialUserDetails {
 	private static final long serialVersionUID = -5246117266247684905L;
-
 	private List<GrantedAuthority> list = new ArrayList<GrantedAuthority>();
 	private MyUserAccount myUserAccount;
 
@@ -30,8 +29,13 @@ public class MySocialUserDetails implements SocialUserDetails {
 	}
 
 	@Override
-	public String getUserId() {
-		return this.myUserAccount.getId();
+	public Collection<? extends GrantedAuthority> getAuthorities() {
+		return list;
+	}
+
+	@Override
+	public String getPassword() {
+		 return myUserAccount.getPassword();
 	}
 
 	@Override
@@ -40,32 +44,32 @@ public class MySocialUserDetails implements SocialUserDetails {
 	}
 
 	@Override
-	public Collection<? extends GrantedAuthority> getAuthorities() {
-		return list;
-	}
-
-	@Override
-	public String getPassword() {
-		return myUserAccount.getPassword();
-	}
-
-	@Override
 	public boolean isAccountNonExpired() {
+		// TODO Auto-generated method stub
 		return true;
 	}
 
 	@Override
 	public boolean isAccountNonLocked() {
+		// TODO Auto-generated method stub
 		return true;
 	}
 
 	@Override
 	public boolean isCredentialsNonExpired() {
+		// TODO Auto-generated method stub
 		return true;
 	}
 
 	@Override
 	public boolean isEnabled() {
+		// TODO Auto-generated method stub
 		return true;
 	}
+
+	@Override
+	public String getUserId() {
+		 return this.myUserAccount.getId();
+	}
+
 }

@@ -17,7 +17,6 @@ import org.springframework.web.servlet.view.InternalResourceViewResolver;
 @Configuration
 @ComponentScan("vn.heyzoo.*")
 @EnableTransactionManagement
-// Load to Environment.
 @PropertySource("classpath:datasource-cfg.properties")
 public class ApplicationContextConfig {
 	@Autowired
@@ -42,9 +41,6 @@ public class ApplicationContextConfig {
 	@Bean(name = "dataSource")
 	public DataSource getDataSource() {
 		DriverManagerDataSource dataSource = new DriverManagerDataSource();
-
-		// See: datasouce-cfg.properties
-		// Xem: datasouce-cfg.properties
 		dataSource.setDriverClassName(env.getProperty("ds.database-driver"));
 		dataSource.setUrl(env.getProperty("ds.url"));
 		dataSource.setUsername(env.getProperty("ds.username"));

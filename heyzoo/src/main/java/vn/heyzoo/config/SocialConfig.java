@@ -30,7 +30,7 @@ import vn.heyzoo.signup.MyConnectionSignUp;
 @PropertySource("classpath:social-cfg.properties")
 public class SocialConfig implements SocialConfigurer {
 
-	private boolean autoSignUp = false;
+	private boolean autoSignUp = true;
 	@Autowired
 	private DataSource dataSource;
 

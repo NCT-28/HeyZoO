@@ -18,9 +18,10 @@ public class MySocialUserDetailsService implements SocialUserDetailsService {
 
 	@Override
 	public SocialUserDetails loadUserByUserId(String userId) throws UsernameNotFoundException {
-		UserDetails userDetails = userDetailService.loadUserByUsername(userId);
-
-		return (MySocialUserDetails) userDetails;
+		  // Dựa trên UserDetailService. (Xem MyUserDetailService).
+	      UserDetails userDetails = userDetailService.loadUserByUsername(userId);
+	 
+	      return (MySocialUserDetails) userDetails;
 	}
 
 	

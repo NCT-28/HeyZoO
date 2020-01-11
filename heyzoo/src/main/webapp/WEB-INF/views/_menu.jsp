@@ -4,21 +4,21 @@
  
 <div style="padding: 5px; border: 1px solid #ccc;">
  
-    <a href="${pageContext.request.contextPath}/">Home</a>
+    <a href="">Home</a>
     
         ||
     
-    <a href="${pageContext.request.contextPath}/userInfo">User Info</a>
+    <a href="userInfo">User Info</a>
  
     <security:authorize access="isAuthenticated()">
         ||
-        <a href="${pageContext.request.contextPath}/logout">Logout</a>
+        <a href="logout">Logout</a>
  
     </security:authorize>
  
     <security:authorize access="!isAuthenticated()">
         ||
-        <a href="${pageContext.request.contextPath}/login">Login</a>
+        <a href="login">Login</a>
  
     </security:authorize>
  
